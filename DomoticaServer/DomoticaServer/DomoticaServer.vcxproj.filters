@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{075812d4-eebc-4ebd-9a9e-50084d7e5f67}</UniqueIdentifier>
+      <Extensions>*.mak</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{913dd5f9-2dd1-44be-bf71-87df54236e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{7e7733e9-de82-4ac5-9ccb-adf389e3bee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading\Source files">
+      <UniqueIdentifier>{936667ce-b996-4936-bddc-b7bb9cc579fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading\Header files">
+      <UniqueIdentifier>{b8b13cd1-5a0d-440d-a76a-f17bc570a0e5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DomoticaServer.cpp" />
+    <ClCompile Include="Task.cpp">
+      <Filter>Threading\Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Threadpool.cpp">
+      <Filter>Threading\Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker.cpp">
+      <Filter>Threading\Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Task.h">
+      <Filter>Threading\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITask.h">
+      <Filter>Threading\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Threadpool.h">
+      <Filter>Threading\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Threading\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
