@@ -187,43 +187,64 @@ Debug/Task.o: Task.cpp \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\numeric \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_numeric.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\condition_variable \
- Threadpool.h Worker.h ../Include/mysql++/mysql++.h \
- ../Include/mysql++/connection.h ../Include/mysql++/common.h \
- ../Include/mysql/mysql_version.h ../Include/mysql/mysql.h \
- ../Include/mysql/mysql_version.h ../Include/mysql/mysql_com.h \
- ../Include/mysql/mysql_time.h ../Include/mysql/my_list.h \
- ../Include/mysql/typelib.h ../Include/mysql/my_alloc.h \
- ../Include/mysql++/noexceptions.h ../Include/mysql++/options.h \
- ../Include/mysql++/tcp_connection.h ../Include/mysql++/uds_connection.h \
- ../Include/mysql++/wnp_connection.h ../Include/mysql++/cpool.h \
- ../Include/mysql++/beemutex.h ../Include/mysql++/exceptions.h \
+ Threadpool.h Worker.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\mysql.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\mysql_version.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\mysql_com.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\mysql_time.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\my_list.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\typelib.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\my_alloc.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\mysql++.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\connection.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\common.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql\mysql_version.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\noexceptions.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\options.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\tcp_connection.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\uds_connection.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\wnp_connection.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\cpool.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\beemutex.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\exceptions.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\sstream \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\sstream.tcc \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\list \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_list.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\list.tcc \
  e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\assert.h \
- ../Include/mysql++/query.h ../Include/mysql++/qparms.h \
- ../Include/mysql++/stadapter.h ../Include/mysql++/datetime.h \
- ../Include/mysql++/comparable.h ../Include/mysql++/null.h \
- ../Include/mysql++/sql_buffer.h ../Include/mysql++/refcounted.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\query.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\qparms.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\stadapter.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\datetime.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\comparable.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\null.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\sql_buffer.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\refcounted.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\cstddef \
- ../Include/mysql++/type_info.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\type_info.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\map \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_tree.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_map.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_multimap.h \
- ../Include/mysql++/tiny_int.h ../Include/mysql++/querydef.h \
- ../Include/mysql++/result.h ../Include/mysql++/field.h \
- ../Include/mysql++/field_names.h ../Include/mysql++/field_types.h \
- ../Include/mysql++/row.h ../Include/mysql++/mystring.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\tiny_int.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\querydef.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\result.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\field.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\field_names.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\field_types.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\row.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\mystring.h \
  e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\string.h \
- ../Include/mysql++/vallist.h ../Include/mysql++/manip.h \
- ../Include/mysql++/myset.h ../Include/mysql++/stream2string.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\vallist.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\manip.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\myset.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\stream2string.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\set \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_set.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\stl_multiset.h \
- ../Include/mysql++/sqlstream.h ../Include/mysql++/transaction.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\sqlstream.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\transaction.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\iomanip \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\locale \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\locale_facets_nonio.h \
@@ -232,5 +253,6 @@ Debug/Task.o: Task.cpp \
  e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\libintl.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\codecvt.h \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\locale_facets_nonio.tcc \
- ../Include/mysql++/insertpolicy.h ../Include/mysql++/scopedconnection.h \
- ../Include/mysql++/sql_types.h
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\insertpolicy.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\scopedconnection.h \
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\sql_types.h

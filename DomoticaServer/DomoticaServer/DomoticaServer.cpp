@@ -1,21 +1,21 @@
 #include <iostream>
 #include "Common.h"
 
-
-using namespace std;
-Threadpool pool(std::thread::hardware_concurrency());
-
-void test()
-{
-	cout << "TEST" << endl;
-}
+using namespace mysqlpp;
 
 int main(int argc, char *argv[])
 {	
-	Task t(test);
-	for (int i = 0; i < 1000; ++i)
+	try
 	{
-		t.Execute(pool);
+		Connection con("DomoticaServer", 0, "root", "raspberry", 0);
+		std::cout << con.connected() << std::endl;
 	}
-	cin.get();
+	catch(...)
+	{
+		std::cout << "Connection could not be established!" << std::endl;
+	}
+	
+	printf("MySQL client version: %s\n", mysql_get_client_info());
+		
+	std::cin.get();
 }

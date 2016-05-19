@@ -176,6 +176,9 @@
 #ifndef __ARM_FP
 #define __ARM_FP 12
 #endif
+#ifndef MYSQLPP_MYSQL_HEADERS_BURIED
+#define MYSQLPP_MYSQL_HEADERS_BURIED 1
+#endif
 #ifndef __UFRACT_MIN__
 #define __UFRACT_MIN__ 0.0UR
 #endif
@@ -1153,8 +1156,6 @@
 //e:\sysgcc\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include
 //e:\sysgcc\bin\../arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf
 //e:\sysgcc\bin\../arm-linux-gnueabihf/sysroot/usr/include
-//../Include/mysql
-//../Include/mysql++
 // --- Include directories end --- //
 
 
