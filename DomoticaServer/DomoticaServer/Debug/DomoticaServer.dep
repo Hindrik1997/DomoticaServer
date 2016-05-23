@@ -255,21 +255,4 @@ Debug/DomoticaServer.o: DomoticaServer.cpp \
  e:\sysgcc\arm-linux-gnueabihf\include\c++\4.9\bits\locale_facets_nonio.tcc \
  e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\insertpolicy.h \
  e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\scopedconnection.h \
- e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\sql_types.h \
- e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\unistd.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\posix_opt.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\environments.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\confname.h \
- e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\getopt.h \
- e:\sysgcc\arm-linux-gnueabihf\include\sys\socket.h \
- e:\sysgcc\arm-linux-gnueabihf\include\sys\uio.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\uio.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\socket.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\socket_type.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\sockaddr.h \
- e:\sysgcc\arm-linux-gnueabihf\include\asm\socket.h \
- e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\asm-generic\socket.h \
- e:\sysgcc\arm-linux-gnueabihf\include\asm\sockios.h \
- e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\asm-generic\sockios.h \
- e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\netinet\in.h \
- e:\sysgcc\arm-linux-gnueabihf\include\bits\in.h
+ e:\sysgcc\arm-linux-gnueabihf\sysroot\usr\include\mysql++\sql_types.h

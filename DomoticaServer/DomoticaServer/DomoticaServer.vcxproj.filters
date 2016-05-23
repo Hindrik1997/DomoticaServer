@@ -5,9 +5,6 @@
       <UniqueIdentifier>{075812d4-eebc-4ebd-9a9e-50084d7e5f67}</UniqueIdentifier>
       <Extensions>*.mak</Extensions>
     </Filter>
-    <Filter Include="Header files">
-      <UniqueIdentifier>{913dd5f9-2dd1-44be-bf71-87df54236e5b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Threading">
       <UniqueIdentifier>{7e7733e9-de82-4ac5-9ccb-adf389e3bee9}</UniqueIdentifier>
     </Filter>
@@ -16,6 +13,9 @@
     </Filter>
     <Filter Include="Threading\Header files">
       <UniqueIdentifier>{b8b13cd1-5a0d-440d-a76a-f17bc570a0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common Header files">
+      <UniqueIdentifier>{913dd5f9-2dd1-44be-bf71-87df54236e5b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,7 +53,7 @@
       <Filter>Threading\Header files</Filter>
     </ClInclude>
     <ClInclude Include="Common.h">
-      <Filter>Header files</Filter>
+      <Filter>Common Header files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
