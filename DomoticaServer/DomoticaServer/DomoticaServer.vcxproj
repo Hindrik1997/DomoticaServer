@@ -64,6 +64,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DomoticaServer.cpp" />
+    <ClCompile Include="NetworkSocket.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="Threadpool.cpp" />
     <ClCompile Include="Worker.cpp" />
@@ -76,6 +77,7 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="ITask.h" />
+    <ClInclude Include="NetworkSocket.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="Threadpool.h" />
     <ClInclude Include="Worker.h" />

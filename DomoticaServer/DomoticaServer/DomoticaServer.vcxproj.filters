@@ -38,6 +38,7 @@
     <ClCompile Include="Worker.cpp">
       <Filter>Threading\Source files</Filter>
     </ClCompile>
+    <ClCompile Include="NetworkSocket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
@@ -55,5 +56,6 @@
     <ClInclude Include="Common.h">
       <Filter>Common Header files</Filter>
     </ClInclude>
+    <ClInclude Include="NetworkSocket.h" />
   </ItemGroup>
 </Project>
