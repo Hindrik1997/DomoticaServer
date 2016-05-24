@@ -21,6 +21,7 @@
   <Build xsi:type="com.visualgdb.build.make">
     <MakeFilePathRelativeToSourceDir>Makefile</MakeFilePathRelativeToSourceDir>
     <MakeConfigurationName>Release</MakeConfigurationName>
+    <AdditionalMakeArguments />
     <Toolchain>
       <Name>Raspberry PI</Name>
       <Location>E:\SysGCC</Location>
@@ -134,6 +135,7 @@
     <ShowMessageAfterExecuting>true</ShowMessageAfterExecuting>
   </CustomShortcuts>
   <UserDefinedVariables />
+  <ImportedPropertySheets />
   <CodeSense>
     <Enabled>Unknown</Enabled>
     <ExtraSettings>

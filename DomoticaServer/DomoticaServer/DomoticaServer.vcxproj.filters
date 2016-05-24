@@ -17,6 +17,15 @@
     <Filter Include="Common Header files">
       <UniqueIdentifier>{913dd5f9-2dd1-44be-bf71-87df54236e5b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Networking">
+      <UniqueIdentifier>{f8187252-01b5-433c-8a8a-b4aa93a516db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Networking\Source files">
+      <UniqueIdentifier>{98e4cbac-f5e0-48d7-b976-21a9801eff88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Networking\Header files">
+      <UniqueIdentifier>{86507e48-1ac0-4194-babb-a5ca96f74f23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
@@ -38,7 +47,9 @@
     <ClCompile Include="Worker.cpp">
       <Filter>Threading\Source files</Filter>
     </ClCompile>
-    <ClCompile Include="NetworkSocket.cpp" />
+    <ClCompile Include="NetworkSocket.cpp">
+      <Filter>Networking\Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
@@ -56,6 +67,8 @@
     <ClInclude Include="Common.h">
       <Filter>Common Header files</Filter>
     </ClInclude>
-    <ClInclude Include="NetworkSocket.h" />
+    <ClInclude Include="NetworkSocket.h">
+      <Filter>Networking\Header files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

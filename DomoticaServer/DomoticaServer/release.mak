@@ -15,13 +15,13 @@ OBJCOPY := E:/SysGCC/bin/arm-linux-gnueabihf-objcopy.exe
 PREPROCESSOR_MACROS := NDEBUG RELEASE
 INCLUDE_DIRS := 
 LIBRARY_DIRS := 
-LIBRARY_NAMES := 
+LIBRARY_NAMES := pthread mysqlclient mysqlpp
 ADDITIONAL_LINKER_INPUTS := 
 MACOS_FRAMEWORKS := 
 LINUX_PACKAGES := 
 
-CFLAGS := -ggdb -ffunction-sections -O3 -std=c++14 -pthread
-CXXFLAGS := -ggdb -ffunction-sections -O3 -std=c++14 -pthread
+CFLAGS := -ggdb -ffunction-sections -O2 -std=c++14 -pthread -DMYSQLPP_MYSQL_HEADERS_BURIED
+CXXFLAGS := -ggdb -ffunction-sections -O2 -std=c++14 -pthread -DMYSQLPP_MYSQL_HEADERS_BURIED
 ASFLAGS := 
 LDFLAGS := -Wl,-gc-sections
 COMMONFLAGS := 

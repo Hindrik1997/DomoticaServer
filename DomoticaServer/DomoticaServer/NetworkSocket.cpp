@@ -40,7 +40,7 @@ auto NetworkSocket::RunServer() -> void
 	
 	m_Server.sin_family = AF_INET; //IPV4
 	m_Server.sin_port = htons(m_Port); //Host To Network byte order van port
-	m_Server.sin_addr.s_addr = INADDR_ANY; //Elke IP die hij kan binden van de interfaces op deze pc
+	m_Server.sin_addr.s_addr = INADDR_ANY; //Elke IP die hij kan binden van de interfaces op deze pc, aka op elke interface luistert deze socket
 	bzero(&m_Server.sin_zero, 8); //zero'en van de laatste member van de struct
 	
 	int len = sizeof(sockaddr_in);
@@ -57,11 +57,8 @@ auto NetworkSocket::RunServer() -> void
 		cout << "Error listening!" << endl;
 		return;
 	}
-	
-	string ServerIP([this]() -> string { char buf[INET_ADDRSTRLEN]; return string(inet_ntop(AF_INET, &m_Server.sin_addr, buf, INET_ADDRSTRLEN)); }());
-	
-	
-	cout << "Succesfully started socket server on: " << ServerIP << " and port: " << m_Port << endl;
+		
+	cout << "Succesfully started socket server on port: " << m_Port << endl;
 	
 	//Client identifier
 	int cli;
@@ -75,23 +72,42 @@ auto NetworkSocket::RunServer() -> void
 			return;
 		}
 			
+		//Vanaf hier verbonden met client!
+		
 		//ClientInfo fetchen
 		string ClientIP([this]() -> string { char buf[INET_ADDRSTRLEN]; return string(inet_ntop(AF_INET, &m_Client.sin_addr, buf, INET_ADDRSTRLEN)); }() );
 		
 		cout << "A new client connected from port: " << ntohs(m_Client.sin_port) << " and IP: " << ClientIP << endl;
 		
-		
+		//Welcome bericht sturen
 		int sent;
-		int received;
-		//Verbonden met client!
 		string message("Welcome!");
-		
 		sent = send(cli, message.c_str(), message.length(), 0 );
-		
-		
 	
 		cout << "Send " << sent << " bytes to: " << ClientIP << endl;
+		//Non-Block mode aanzetten ivm multithreading
+		if (fcntl(cli, F_SETFL, fcntl(cli, F_GETFL) | O_NONBLOCK) < 0) {
+			cout << "Error putting socket in non block mode!" << endl;
+		}
+		fd_set fdset;
+		struct timeval tv;
+		tv.tv_sec = 1; //1sec timeout
+		tv.tv_usec = 0;
+		FD_ZERO(&fdset);
+		FD_SET(cli, &fdset);
 		
+		//Reply receiven
+		int data_len = 0;
+		char buf[MAX_REPLY_BUFFER_SIZE];
+		do
+		{
+			data_len = recv(cli, buf, MAX_REPLY_BUFFER_SIZE, 0);
+			if(data_len != 0)
+			buf[data_len] = '\0';
+		} while (data_len);
+		
+		cout << "Received reply: " << string(buf) << endl;	
+				
 		close(cli);
 	}
 }

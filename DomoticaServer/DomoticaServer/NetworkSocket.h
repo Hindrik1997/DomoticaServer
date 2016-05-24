@@ -5,7 +5,12 @@
 #include <arpa/inet.h>
 #include "Common.h"
 #include <unistd.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
 
+#define MAX_REPLY_BUFFER_SIZE 1024
+
+//Class for easily starting a server on a POSIX/Berkeley socket
 class NetworkSocket
 {
 public:

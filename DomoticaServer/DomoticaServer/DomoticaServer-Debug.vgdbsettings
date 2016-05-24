@@ -96,7 +96,7 @@
     <LaunchGDBSettings xsi:type="GDBLaunchParametersNewInstance">
       <DebuggedProgram>$(TargetPath)</DebuggedProgram>
       <GDBServerPort>2000</GDBServerPort>
-      <ProgramArguments>1500</ProgramArguments>
+      <ProgramArguments>15326</ProgramArguments>
     </LaunchGDBSettings>
     <GenerateCtrlBreakInsteadOfCtrlC>false</GenerateCtrlBreakInsteadOfCtrlC>
     <DeploymentTargetPath>/tmp/$(TargetFileName)</DeploymentTargetPath>
@@ -126,7 +126,7 @@
   <UserDefinedVariables />
   <ImportedPropertySheets />
   <CodeSense>
-    <Enabled>True</Enabled>
+    <Enabled>Unknown</Enabled>
     <CFLAGS />
     <CXXFLAGS>-std=c++14</CXXFLAGS>
     <ExternalSourceFileList />
