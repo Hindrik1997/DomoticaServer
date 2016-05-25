@@ -33,6 +33,6 @@ int main(int argc, char *argv[])
 	socket.RunSocketServer();
 		
 	std::cin.get();
-	socket.StopSocketServer();
+	//socket.StopSocketServer();
 }
 
