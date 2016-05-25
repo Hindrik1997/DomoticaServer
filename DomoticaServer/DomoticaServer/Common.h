@@ -12,11 +12,6 @@
 #include <algorithm>
 #include <functional>
 #include <condition_variable>
-
-#include "Task.h"
-#include "ITask.h"
-#include "Threadpool.h"
-
 #include <mysql/mysql.h>
 #include <mysql++/mysql++.h>
 

@@ -1,12 +1,24 @@
 #include <iostream>
 #include "Common.h"
 #include "NetworkSocket.h"
+#include "CommandExecutionEngine.h"
 
 using namespace mysqlpp;
 
-
 int main(int argc, char *argv[])
 {	
+	cout << endl;
+	cout << "----------------------------------" << endl;
+	cout << "DomoticaServer Version 0.0.1 Alpha" << endl;
+	cout << "----------------------------------" << endl;
+	cout << endl;
+	cout << "----------------------------------" << endl;
+	cout << "LOG/TERMINAL: " << endl;
+	cout << "Use the 'exit' command to shutdown the server." << endl;
+	cout << "----------------------------------" << endl;
+	cout << endl;
+	cout << endl;
+	CommandExecutionEngine cee(std::thread::hardware_concurrency());
 	int port = 15326;
 	if (argc > 1)
 	{
@@ -29,10 +41,16 @@ int main(int argc, char *argv[])
 	}
 	cout << "MySQL Client Version: " << mysql_get_client_info() << endl;
 
-	NetworkSocket socket(port);
+	NetworkSocket socket(port, cee);
 	socket.RunSocketServer();
-		
-	std::cin.get();
-	//socket.StopSocketServer();
+	while (true)
+	{
+		char buf[128];
+		cin.getline(buf,128);
+		string cmd(buf);
+		if (cmd == "exit")
+			break;
+		cee.Execute(cmd);
+	}	
+	socket.StopSocketServer();
 }
-

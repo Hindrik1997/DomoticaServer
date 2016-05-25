@@ -35,7 +35,7 @@ error:
 	$(error Invalid configuration, please check your inputs)
 endif
 
-SOURCEFILES := DomoticaServer.cpp NetworkSocket.cpp Task.cpp Threadpool.cpp Worker.cpp
+SOURCEFILES := CommandExecutionEngine.cpp DomoticaServer.cpp NetworkSocket.cpp Task.cpp Threadpool.cpp Worker.cpp
 EXTERNAL_LIBS := 
 EXTERNAL_LIBS_COPIED := $(foreach lib, $(EXTERNAL_LIBS),$(BINARYDIR)/$(notdir $(lib)))
 

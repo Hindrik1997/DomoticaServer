@@ -50,6 +50,7 @@
     <ClCompile Include="NetworkSocket.cpp">
       <Filter>Networking\Source files</Filter>
     </ClCompile>
+    <ClCompile Include="CommandExecutionEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
@@ -70,5 +71,6 @@
     <ClInclude Include="NetworkSocket.h">
       <Filter>Networking\Header files</Filter>
     </ClInclude>
+    <ClInclude Include="CommandExecutionEngine.h" />
   </ItemGroup>
 </Project>
