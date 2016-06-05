@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	cout << "----------------------------------" << endl;
 	cout << endl;
 	cout << endl;
-	CommandExecutionEngine cee(std::thread::hardware_concurrency());
+	
 	int port = 15326;
 	if (argc > 1)
 	{
@@ -30,17 +30,11 @@ int main(int argc, char *argv[])
 		str >> port;
 	}
 	
-	try
-	{
-		Connection con("DomoticaServer", 0, "root", "raspberry", 0);
-		std::cout << (con.connected() == 1 ? "Succesfully connected to the database" : "Error on connecting to database!") << std::endl;
-	}
-	catch(...)
-	{
-		std::cout << "Connection to the database could not be established!" << std::endl;
-	}
+	Connection con("DomoticaServer", 0, "root", "raspberry", 0);
+	std::cout << (con.connected() == 1 ? "Succesfully connected to the database" : "Error on connecting to database!") << std::endl;
 	cout << "MySQL Client Version: " << mysql_get_client_info() << endl;
 
+	CommandExecutionEngine cee(std::thread::hardware_concurrency(), con);
 	NetworkSocket socket(port, cee);
 	socket.RunSocketServer();
 	while (true)

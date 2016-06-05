@@ -7,7 +7,7 @@ byte mac[] = {
 };
 IPAddress ip(192, 168, 1, 177);
 
-IPAddress server_IP(192, 168, 1, 100);
+IPAddress server_IP(192, 168, 1, 7);
 
 EthernetClient client;
 EthernetServer server(15327);
@@ -15,6 +15,23 @@ EthernetServer server(15327);
 int  val = 0;
 char code[10];
 int bytesread = 0;
+
+void ProcessMessage(String msg) 
+{
+	if (msg == "1")
+	{
+		digitalWrite(9, HIGH);
+		delay(1500);
+		digitalWrite(9, LOW);
+	}
+	if (msg == "0")
+	{
+		digitalWrite(8, HIGH);
+		delay(1500);
+		digitalWrite(8, LOW);
+	}
+
+}
 
 void SendMessage(String msg) 
 {
@@ -33,6 +50,9 @@ void SendMessage(String msg)
 }
 
 void setup() {
+
+	pinMode(8,OUTPUT);
+	pinMode(9,OUTPUT);
 	Ethernet.begin(mac, ip);
 	Serial.begin(2400);
 	delay(1000);
@@ -41,12 +61,31 @@ void setup() {
 }
 
 void loop() {
+	//Buffer cleanen voor de zekerheid
+	while (Serial.available() > 0)
+	{
+		Serial.read();
+	}
 	EthernetClient serverClient = server.available();
 	
-	if (client)
+	if (serverClient)
 	{
+		Serial.println("Incoming client!");
+		int i = 0;
+		char buf[128];
 		//Client is verbonden
+		delay(500);
+		while (serverClient.available() > 0)
+		{
+			buf[i] = serverClient.read();
+			++i;
+		}
+		buf[i] = '\0';
+		String data(buf);
+		Serial.println(data);
+		ProcessMessage(data);
 	}
+	serverClient.stop();
 
 	if (Serial.available() > 0) {          // if data available from reader 
 		if ((val = Serial.read()) == 10) {   // check for header 
@@ -71,7 +110,7 @@ void loop() {
 			}
 			bytesread = 0;
 			digitalWrite(2, HIGH);                  // deactivate the RFID reader for a moment so it will not flood
-			delay(5000);                       // wait for a bit 
+			delay(1500);                       // wait for a bit 
 			digitalWrite(2, LOW);                 // Activate the RFID reader
 		}
 	}

@@ -11,7 +11,7 @@ class CommandExecutionEngine
 public:
 	CommandExecutionEngine(size_t threadcount, Connection& con);
 	~CommandExecutionEngine();
-	void Execute(string command);
+	void Execute(string command, string sender);
 private:
 	Connection& conref;
 	Threadpool pool;

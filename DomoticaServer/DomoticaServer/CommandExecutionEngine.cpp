@@ -1,5 +1,6 @@
 #include "CommandExecutionEngine.h"
 #include "Common.h"
+#include "NetworkSocket.h"
 
 CommandExecutionEngine::CommandExecutionEngine(size_t threadcount, Connection& con) : pool(threadcount - 1), conref(con)
 {
@@ -10,8 +11,10 @@ CommandExecutionEngine::~CommandExecutionEngine()
 {
 }
 
-void CommandExecutionEngine::Execute(string command)
+void CommandExecutionEngine::Execute(string command, string sender)
 {
+	
+	
 	//Commands!
 	if (command[0] == 'R' && command[1] == 'F' && command[2] == 'I' && command[3] == 'D' && command[4] == ':' && command[5] == ' ')
 	{
@@ -37,12 +40,14 @@ void CommandExecutionEngine::Execute(string command)
 	
 	if(command[0] == 'K' && command[1] == 'A')
 	{
-		cout << "Koffie apparaat aan!" << endl;		
+		cout << "Koffie apparaat aan!" << endl;
+		NetworkSocket::SendMessage();
 	}
 	
 	if (command[0] == 'K' && command[1] == 'Z')
 	{
-		cout << "Koffie zetten!" << endl;		
+		cout << "Koffie zetten!" << endl;	
+		NetworkSocket::SendMessage();
 	}
 	
 }
