@@ -30,24 +30,25 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		for (size_t i = 0; i < res.num_rows(); ++i)
 		{
 			cout << "Name: " << res[i]["RFID_CODE"] << " " << res[i]["CHECKED_IN"] << " " << std::endl;			
-		}
-		
-		
-		
-		
-		
+		}	
 	}
 	
 	if(command[0] == 'K' && command[1] == 'A')
 	{
 		cout << "Koffie apparaat aan!" << endl;
-		NetworkSocket::SendMessage();
+		NetworkSocket::SendMessage(sender, "1");
 	}
 	
-	if (command[0] == 'K' && command[1] == 'Z')
+	if (command[0] == 'K' && command[1] == '1')
 	{
-		cout << "Koffie zetten!" << endl;	
-		NetworkSocket::SendMessage();
+		cout << "Koffie zetten voor 1 persoon!" << endl;	
+		NetworkSocket::SendMessage(sender, "1");
 	}
+	
+	if (command[0] == 'K' && command[1] == '2')
+	{
+		cout << "Koffie zetten voor 2 personen!" << endl;	
+		NetworkSocket::SendMessage(sender, "1");
+	}	
 	
 }

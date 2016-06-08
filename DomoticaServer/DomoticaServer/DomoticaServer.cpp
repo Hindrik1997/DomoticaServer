@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		string cmd(buf);
 		if (cmd == "exit")
 			break;
-		cee.Execute(cmd);
+		cee.Execute(cmd, "localhost");
 	}	
 	socket.StopSocketServer();
 }
