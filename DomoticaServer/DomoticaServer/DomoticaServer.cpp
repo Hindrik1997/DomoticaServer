@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	
 	cout << endl;
 	cout << "----------------------------------" << endl;
-	cout << "DomoticaServer Version 0.0.1 Alpha" << endl;
+	cout << "DomoticaServer Version 1.0.0" << endl;
 	cout << "----------------------------------" << endl;
 	cout << endl;
 	cout << "----------------------------------" << endl;

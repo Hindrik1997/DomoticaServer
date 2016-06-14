@@ -15,10 +15,11 @@ EthernetServer server(15327);
 int  val = 0;
 char code[10];
 int bytesread = 0;
+int LastKnownState = 0;
 
 void ProcessMessage(String msg) 
 {
-	if (msg == "1")
+	if (msg == "-1")
 	{
 		digitalWrite(9, HIGH);
 		delay(1500);
@@ -29,6 +30,12 @@ void ProcessMessage(String msg)
 		digitalWrite(8, HIGH);
 		delay(1500);
 		digitalWrite(8, LOW);
+	}
+	if (msg == "1")
+	{
+		digitalWrite(7,HIGH);
+		delay(1500);
+		digitalWrite(7, LOW);
 	}
 	Serial.println(msg);
 }
@@ -44,19 +51,22 @@ void SendMessage(String msg)
 		return;
 	}
 
-	client.print("RFID: " + msg);
+	client.print(msg);
 
 	client.stop();
 }
 
 void setup() {
 
+	pinMode(7,OUTPUT);
 	pinMode(8,OUTPUT);
 	pinMode(9,OUTPUT);
+	pinMode(5,INPUT);
 	Ethernet.begin(mac, ip);
 	Serial.begin(2400);
 	delay(1000);
-	pinMode(2,OUTPUT);
+	pinMode(3, INPUT);
+	pinMode(2, OUTPUT);
 	digitalWrite(2, LOW);
 }
 
@@ -67,7 +77,7 @@ void loop() {
 		Serial.read();
 	}
 	EthernetClient serverClient = server.available();
-	
+
 	if (serverClient)
 	{
 		Serial.println("Incoming client!");
@@ -90,7 +100,7 @@ void loop() {
 	if (Serial.available() > 0) {          // if data available from reader 
 		if ((val = Serial.read()) == 10) {   // check for header 
 			bytesread = 0;
-			while (bytesread<10) {              // read 10 digit code 
+			while (bytesread < 10) {              // read 10 digit code 
 				if (Serial.available() > 0) {
 					val = Serial.read();
 					if ((val == 10) || (val == 13)) { // if header or stop bytes before the 10 digit reading 
@@ -100,8 +110,10 @@ void loop() {
 					bytesread++;                   // ready to read next digit  
 				}
 			}
-			if (bytesread == 10) {
-				SendMessage(code);
+			if (bytesread == 10) 
+			{
+				String prefix = "RFID: ";
+				SendMessage(prefix + code);
 			}
 			//buffer clearen
 			while (Serial.available() > 0)
@@ -115,5 +127,11 @@ void loop() {
 		}
 	}
 
-
+	int tState = digitalRead(3);
+	if (LastKnownState != tState)
+	{
+		LastKnownState = tState;
+		String s = (tState == 1 ? "CPS0" : "CPS1");
+		SendMessage(s);
+	}
 }

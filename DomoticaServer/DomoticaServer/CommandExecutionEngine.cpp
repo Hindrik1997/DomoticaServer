@@ -3,6 +3,8 @@
 #include "NetworkSocket.h"
 #include <ostream>
 
+bool IsCupThere = false;
+
 void KoffieAanUit() 
 {
 	pinMode(13, OUTPUT);
@@ -118,14 +120,41 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		NetworkSocket::SendMessage(sender.c_str(), msg);
 	}
 	
+	
+	if (command[0] == 'C' && command[1] == 'P' && command[2] == 'S' && command[3] == '1')
+	{
+		IsCupThere = true;
+		cout << "A cup is placed" << endl;
+		return;
+	}
+	if (command[0] == 'C' && command[1] == 'P' && command[2] == 'S' && command[3] == '0')
+	{
+		IsCupThere = false;
+		cout << "A cup is removed" << endl;
+		return;
+	}
+	
+	
 	if (!MayUseCoffeeDevice(*this))
 	{
 		if (sender != "localhost")
 		{
+			//Niemand ingecheckt van sec group
 			NetworkSocket::SendMessage(sender, "3");
 		}
 		return;
 	}
+	if (IsCupThere)
+	{
+		if (sender != "localhost")
+		{
+			//Geen kopje aanwezig
+			NetworkSocket::SendMessage(sender, "4");
+		}
+		return;
+	}
+	
+	
 	if(command[0] == 'K' && command[1] == 'A')
 	{
 		std::shared_ptr<Task> p = std::make_shared<Task>(KoffieAanUit);
