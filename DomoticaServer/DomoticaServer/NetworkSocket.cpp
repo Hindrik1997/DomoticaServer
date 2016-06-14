@@ -1,6 +1,8 @@
 #include "NetworkSocket.h"
 #include <errno.h>
 #include "CommandExecutionEngine.h"
+#include "Common.h"
+#include <future>
 
 void* get_internet_addr(struct sockaddr* sa)
 {
@@ -41,6 +43,8 @@ bool NetworkSocket::SendMessage(string ip, string message)
 	{
 		cout << "Error on setting socket options for sending!" << endl;
 		cout << strerror(errno) << endl;
+		close(socket_fd);
+		shutdown(socket_fd, SHUT_RDWR);
 		return false;
 	}
 	
@@ -49,22 +53,63 @@ bool NetworkSocket::SendMessage(string ip, string message)
 	if ((inet_pton(AF_INET, ip.c_str(), &remote.sin_addr)) == -1)
 	{
 		cout << "Invalid IP Adress!" << endl;
+		close(socket_fd);
+		shutdown(socket_fd, SHUT_RDWR);
 		return false;
 	}
 	bzero(&remote.sin_zero, 8); //zero'en van de laatste member van de struct
 	
 	int len = sizeof(sockaddr_in);
 		
-	
-	if ((connect(socket_fd, (sockaddr*)&remote, sizeof(sockaddr_in))))
+	fd_set set;
+	fcntl(socket_fd, F_SETFL, O_NONBLOCK);
+
+	int result = (connect(socket_fd, (sockaddr*)&remote, sizeof(sockaddr_in)));
+	timeval tv;
+
+	if (result < 0)
 	{
-		cout << "Error connecting to receiver of message!" << endl;
-		return false;
+		if (errno == EINPROGRESS)
+		{
+			tv.tv_sec = 1;
+			tv.tv_usec = 0;
+			FD_ZERO(&set);
+			FD_SET(socket_fd, &set);
+			if (select(socket_fd + 1, NULL, &set, NULL, &tv) > 0)
+			{
+				int valopt;
+				socklen_t iLen = sizeof(int);
+				getsockopt(socket_fd, SOL_SOCKET, SO_ERROR, (void*)(&valopt), &iLen);
+				if(valopt)
+				{ 
+					cout << "Error in connection: " << valopt << " - " << strerror(valopt) << endl;
+					close(socket_fd);
+					shutdown(socket_fd, SHUT_RDWR);
+					return false;
+				}
+			}
+			else
+			{
+				cout << "Timed out for sending message.";
+				close(socket_fd);
+				shutdown(socket_fd, SHUT_RDWR);
+				return false;
+			}
+		}
+		else 
+		{
+			cout << "Error connecting to target device" << endl;
+			close(socket_fd);
+			shutdown(socket_fd, SHUT_RDWR);
+			return false;
+		}
 	}
+
 	cout << "Connected to pc to send msg to" << endl;
 	send(socket_fd, message.c_str(),message.length(),0);
-	
+	cout << "Message sent: " << message << endl;
 	close(socket_fd);
+	shutdown(socket_fd, SHUT_RDWR);
 }
 
 

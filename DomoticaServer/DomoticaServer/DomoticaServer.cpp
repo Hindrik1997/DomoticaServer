@@ -7,6 +7,11 @@ using namespace mysqlpp;
 
 int main(int argc, char *argv[])
 {	
+	wiringPiSetupGpio();
+	digitalWrite(6, LOW);
+	digitalWrite(13, LOW);
+	digitalWrite(19, LOW);
+	
 	cout << endl;
 	cout << "----------------------------------" << endl;
 	cout << "DomoticaServer Version 0.0.1 Alpha" << endl;

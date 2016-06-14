@@ -13,6 +13,9 @@ public:
 	~CommandExecutionEngine();
 	void Execute(string command, string sender);
 private:
+
+	friend bool MayUseCoffeeDevice(CommandExecutionEngine& ref);
+
 	Connection& conref;
 	Threadpool pool;
 };

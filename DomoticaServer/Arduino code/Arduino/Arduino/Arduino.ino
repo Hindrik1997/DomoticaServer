@@ -5,9 +5,9 @@
 byte mac[] = {
 	0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
 };
-IPAddress ip(192, 168, 1, 177);
+IPAddress ip(10, 0, 0, 177);
 
-IPAddress server_IP(192, 168, 1, 7);
+IPAddress server_IP(10,0,0,1);
 
 EthernetClient client;
 EthernetServer server(15327);
@@ -30,7 +30,7 @@ void ProcessMessage(String msg)
 		delay(1500);
 		digitalWrite(8, LOW);
 	}
-
+	Serial.println(msg);
 }
 
 void SendMessage(String msg) 

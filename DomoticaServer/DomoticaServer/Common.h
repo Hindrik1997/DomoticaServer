@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <functional>
 #include <condition_variable>
+#include <wiringPi.h>
 #include <mysql/mysql.h>
 #include <mysql++/mysql++.h>
 
