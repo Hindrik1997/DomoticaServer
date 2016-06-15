@@ -144,7 +144,7 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		}
 		return;
 	}
-	if (IsCupThere)
+	if (!IsCupThere)
 	{
 		if (sender != "localhost")
 		{
