@@ -5,6 +5,7 @@
 using std::function;
 class Threadpool;
 
+//Class voor het vergemakkelijken van het gebruik van de ITask class
 class Task : public ITask
 {
 public:

@@ -28,9 +28,9 @@ private:
 	bool m_Stop;
 	std::thread* m_Thread = nullptr;
 	int m_Port;
-	int m_Sock_fd;
+	int m_Sock_fd; //Listenende socket. Deze moet vanaf de main thread bij voorkeur bereikbaar zijn. Vandaar dat ie in de class zit
 	CommandExecutionEngine& m_ExecEngine;
-private: 
+private:
 	void RunServer();
 };
 
