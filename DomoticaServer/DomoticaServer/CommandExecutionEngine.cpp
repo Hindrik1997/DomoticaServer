@@ -5,6 +5,8 @@
 
 bool IsCupThere = false;
 
+//WiringPi is een library die je de GPIO pennen in arduino stijl laat aansturen
+
 void KoffieAanUit() 
 {
 	pinMode(13, OUTPUT);
@@ -29,6 +31,7 @@ void TweeKopKoffie()
 	digitalWrite(19, LOW);
 }
 
+//Query'ed de DB voor RFID Checked IN
 bool MayUseCoffeeDevice(CommandExecutionEngine& ref) 
 {
 	Query query = ref.conref.query();
@@ -58,6 +61,7 @@ CommandExecutionEngine::~CommandExecutionEngine()
 {
 }
 
+//Voert commands uit
 void CommandExecutionEngine::Execute(string command, string sender)
 {
 	//Commands!
@@ -120,13 +124,14 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		NetworkSocket::SendMessage(sender.c_str(), msg);
 	}
 	
-	
+	//Cup is placed
 	if (command[0] == 'C' && command[1] == 'P' && command[2] == 'S' && command[3] == '1')
 	{
 		IsCupThere = true;
 		cout << "A cup is placed" << endl;
 		return;
 	}
+	//Cup is removed
 	if (command[0] == 'C' && command[1] == 'P' && command[2] == 'S' && command[3] == '0')
 	{
 		IsCupThere = false;
@@ -139,7 +144,7 @@ void CommandExecutionEngine::Execute(string command, string sender)
 	{
 		if (sender != "localhost")
 		{
-			//Niemand ingecheckt van sec group
+			//Niemand ingecheckt van security group
 			NetworkSocket::SendMessage(sender, "3");
 		}
 		return;
@@ -154,11 +159,12 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		return;
 	}
 	
-	
+	//Koffie aan
 	if(command[0] == 'K' && command[1] == 'A')
 	{
+		//Shared_ptr is een pointer met ref counting, delete de resource automatisch wanneer er geen refs meer zijn
 		std::shared_ptr<Task> p = std::make_shared<Task>(KoffieAanUit);
-		pool.Enqueue(*p);	
+		pool.Enqueue(*p);
 		cout << "Koffie apparaat aan!" << endl;
 		if (sender != "localhost") 
 		{
@@ -166,6 +172,7 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		}
 	}
 	
+	//1 kopje
 	if (command[0] == 'K' && command[1] == '1')
 	{
 		cout << "Koffie zetten voor 1 persoon!" << endl;
@@ -177,6 +184,7 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		}
 	}
 	
+	//2 kopjes
 	if (command[0] == 'K' && command[1] == '2')
 	{
 		std::shared_ptr<Task> p = std::make_shared<Task>(TweeKopKoffie);

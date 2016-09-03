@@ -7,6 +7,7 @@ using namespace mysqlpp;
 
 int main(int argc, char *argv[])
 {	
+	//WiringPiSetup 
 	wiringPiSetupGpio();
 	digitalWrite(6, LOW);
 	digitalWrite(13, LOW);
@@ -42,6 +43,7 @@ int main(int argc, char *argv[])
 	CommandExecutionEngine cee(std::thread::hardware_concurrency(), con);
 	NetworkSocket socket(port, cee);
 	socket.RunSocketServer();
+	//Voor lokale commands op de server
 	while (true)
 	{
 		char buf[128];

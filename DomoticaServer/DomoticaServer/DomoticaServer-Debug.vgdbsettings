@@ -10,7 +10,7 @@
       <Transport>None</Transport>
     </BuildHost>
     <DeploymentHost>
-      <HostName>10.0.0.1</HostName>
+      <HostName>192.168.1.7</HostName>
       <Transport>SSH</Transport>
       <UserName>pi</UserName>
     </DeploymentHost>
@@ -34,7 +34,6 @@
       </FileMasks>
       <TransferNewFilesOnly>true</TransferNewFilesOnly>
       <IncludeSubdirectories>true</IncludeSubdirectories>
-      <SelectedDirectories />
     </MainSourceTransferCommand>
     <AllowChangingHostForMainCommands>false</AllowChangingHostForMainCommands>
     <SkipBuildIfNoSourceFilesChanged>false</SkipBuildIfNoSourceFilesChanged>
@@ -49,16 +48,16 @@
     <AdditionalMakeArguments />
     <Toolchain>
       <Name>Raspberry PI</Name>
-      <Location>C:\SysGCC\Raspberry</Location>
+      <Location>E:\SysGCC</Location>
       <UnixSystem>false</UnixSystem>
-      <GCC>C:\SysGCC\Raspberry\bin\arm-linux-gnueabihf-gcc.exe</GCC>
-      <GXX>C:\SysGCC\Raspberry\bin\arm-linux-gnueabihf-g++.exe</GXX>
-      <GDB>C:\SysGCC\Raspberry\bin\arm-linux-gnueabihf-gdb.exe</GDB>
-      <AR>C:\SysGCC\Raspberry\bin\arm-linux-gnueabihf-ar.exe</AR>
-      <OBJCOPY>C:\SysGCC\Raspberry\bin\arm-linux-gnueabihf-objcopy.exe</OBJCOPY>
-      <Make>C:\SysGCC\Raspberry\bin\make.exe</Make>
+      <GCC>E:\SysGCC\bin\arm-linux-gnueabihf-gcc.exe</GCC>
+      <GXX>E:\SysGCC\bin\arm-linux-gnueabihf-g++.exe</GXX>
+      <GDB>E:\SysGCC\bin\arm-linux-gnueabihf-gdb.exe</GDB>
+      <AR>E:\SysGCC\bin\arm-linux-gnueabihf-ar.exe</AR>
+      <OBJCOPY>E:\SysGCC\bin\arm-linux-gnueabihf-objcopy.exe</OBJCOPY>
+      <Make>E:\SysGCC\bin\make.exe</Make>
       <AdditionalPathDirectories>
-        <string>C:\SysGCC\Raspberry\bin</string>
+        <string>E:\SysGCC\bin</string>
       </AdditionalPathDirectories>
       <RequireCmdExe>true</RequireCmdExe>
       <RequireCtrlBreak>false</RequireCtrlBreak>
@@ -73,7 +72,7 @@
         <Transport>None</Transport>
       </RemoteHost>
       <Command>cmd.exe</Command>
-      <Arguments>/c "C:\SysGCC\Raspberry\bin\make.exe"</Arguments>
+      <Arguments>/c "E:\SysGCC\bin\make.exe"</Arguments>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <Environment>
         <Records>
@@ -83,7 +82,7 @@
           </Record>
           <Record>
             <VariableName>PATH</VariableName>
-            <Value>C:\SysGCC\Raspberry\bin;%PATH%</Value>
+            <Value>E:\SysGCC\bin;%PATH%</Value>
           </Record>
         </Records>
       </Environment>

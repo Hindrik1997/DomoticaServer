@@ -1149,24 +1149,24 @@
 #endif
 
 // --- Include directories begin --- //
-//c:\sysgcc\raspberry\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include/c++/4.9
-//c:\sysgcc\raspberry\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include/c++/4.9/backward
-//c:\sysgcc\raspberry\bin\../lib/gcc/arm-linux-gnueabihf/4.9/include
-//c:\sysgcc\raspberry\bin\../lib/gcc/arm-linux-gnueabihf/4.9/include-fixed
-//c:\sysgcc\raspberry\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include
-//c:\sysgcc\raspberry\bin\../arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf
-//c:\sysgcc\raspberry\bin\../arm-linux-gnueabihf/sysroot/usr/include
+//e:\sysgcc\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include/c++/4.9
+//e:\sysgcc\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include/c++/4.9/backward
+//e:\sysgcc\bin\../lib/gcc/arm-linux-gnueabihf/4.9/include
+//e:\sysgcc\bin\../lib/gcc/arm-linux-gnueabihf/4.9/include-fixed
+//e:\sysgcc\bin\../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/include
+//e:\sysgcc\bin\../arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf
+//e:\sysgcc\bin\../arm-linux-gnueabihf/sysroot/usr/include
 // --- Include directories end --- //
 
 
 // --- Library directories begin --- //
-//c:/sysgcc/raspberry/bin/../lib/gcc/arm-linux-gnueabihf/4.9/
-//c:/sysgcc/raspberry/bin/../lib/gcc/arm-linux-gnueabihf/
-//c:/sysgcc/raspberry/bin/../lib/gcc/
-//c:/sysgcc/raspberry/bin/../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/lib/
-//c:/sysgcc/raspberry/bin/../arm-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf/
-//c:/sysgcc/raspberry/bin/../arm-linux-gnueabihf/sysroot/lib/
-//c:/sysgcc/raspberry/bin/../arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/
-//c:/sysgcc/raspberry/bin/../arm-linux-gnueabihf/sysroot/usr/lib/
+//e:/sysgcc/bin/../lib/gcc/arm-linux-gnueabihf/4.9/
+//e:/sysgcc/bin/../lib/gcc/arm-linux-gnueabihf/
+//e:/sysgcc/bin/../lib/gcc/
+//e:/sysgcc/bin/../lib/gcc/arm-linux-gnueabihf/4.9/../../../../arm-linux-gnueabihf/lib/
+//e:/sysgcc/bin/../arm-linux-gnueabihf/sysroot/lib/arm-linux-gnueabihf/
+//e:/sysgcc/bin/../arm-linux-gnueabihf/sysroot/lib/
+//e:/sysgcc/bin/../arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/
+//e:/sysgcc/bin/../arm-linux-gnueabihf/sysroot/usr/lib/
 // --- Library directories begin --- //
 

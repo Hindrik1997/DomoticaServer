@@ -28,7 +28,7 @@ public:
 class Threadpool {
 public:
 	Threadpool(size_t threads);
-	//Do not pass a temporary object in here!
+	//Do not pass a tempary object in here! That's why i use references you see?
 	void Enqueue(ITask& job);
 	~Threadpool();
 	//Clears the deque of tasks
