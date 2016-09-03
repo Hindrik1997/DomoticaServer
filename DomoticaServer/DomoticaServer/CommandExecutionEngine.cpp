@@ -162,7 +162,7 @@ void CommandExecutionEngine::Execute(string command, string sender)
 		cout << "Koffie apparaat aan!" << endl;
 		if (sender != "localhost") 
 		{
-			NetworkSocket::SendMessage(sender, "3");
+			NetworkSocket::SendMessage(sender, "1");
 		}
 	}
 	
